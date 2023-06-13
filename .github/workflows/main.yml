@@ -11,22 +11,23 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: Build
-        run: echo "build going on"
-
-      - name: Run a multi-line script
         run: |
-          echo Add other actions to build,
-          echo test, and deploy your project
+          echo "build going on"
+          sleep 10
       - name: Create a file
         run: touch /tmp/gagandeep1
   test:
     runs-on: ubuntu-latest
     steps:
       - name: Run test cases
-        run: echo "Test running"
+        run: |
+          echo "Test running"
+          sleep 10
 
   deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Do deployment
-        run: echo "deployment being done"
+        run: |
+          echo "deployment being done"
+          sleep 10
