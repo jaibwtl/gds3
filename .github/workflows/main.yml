@@ -16,6 +16,7 @@ jobs:
           sleep 10
       - name: Create a file
         run: touch /tmp/gagandeep1
+    needs: test
   test:
     runs-on: ubuntu-latest
     steps:
@@ -23,7 +24,7 @@ jobs:
         run: |
           echo "Test running"
           sleep 10
-
+    needs: deploy
   deploy:
     runs-on: ubuntu-latest
     steps:
