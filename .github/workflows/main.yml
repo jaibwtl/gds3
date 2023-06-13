@@ -12,7 +12,7 @@ jobs:
 
       - name: Build
         run: |
-          eho "build going on"
+          cho "build going on"  ## Mistake to fail the build job
           sleep 10
       - name: Create a file
         run: touch /tmp/gagandeep1
@@ -23,7 +23,7 @@ jobs:
         run: |
           echo "Test running"
           sleep 10
-    needs: build
+    needs: build   ## Will only run after successful completion of build job
   deploy:
     runs-on: ubuntu-latest
     steps:
@@ -31,4 +31,6 @@ jobs:
         run: |
           echo "deployment being done"
           sleep 10
-    needs: test
+    if: ${{ always() }}
+    needs: build 
+    ## Will run even after unsuccessful completion of build job
