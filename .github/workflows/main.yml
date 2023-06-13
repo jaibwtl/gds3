@@ -12,7 +12,7 @@ jobs:
 
       - name: Build
         run: |
-          echo "build going on"
+          eho "build going on"
           sleep 10
       - name: Create a file
         run: touch /tmp/gagandeep1
