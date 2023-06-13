@@ -31,4 +31,4 @@ jobs:
         run: |
           echo "deployment being done"
           sleep 10
-    needs: build
+    needs: test
