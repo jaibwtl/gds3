@@ -1,18 +1,11 @@
-name: Greeting on variable day
+name: Env_Workflow
 on:
   push
-env:
-  DAY_OF_WEEK: Monday
 
 jobs:
-  greeting_job:
+  env_job:
     runs-on: ubuntu-latest
-    env:
-      Greeting: Hello
-      DAY_OF_WEEK: Tuesday
     steps:
-      - name: "Say Hello Mona it's Monday"
-        run: echo "$Greeting ${{ vars.greeting }} $First_Name. Today is $DAY_OF_WEEK! ${{ vars.var1 }} "
-        env:
-          First_Name: Mona
-          Greeting: Hi
+      - name: Print Env Variable from Repository Env
+        run: echo " var1 is having value ${{ vars.var1 }} "
+
