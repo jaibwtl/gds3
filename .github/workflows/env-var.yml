@@ -1,11 +1,14 @@
-name: Env_Workflow
 on:
-  push
+  push:
+    branches:
+      - main
 
 jobs:
-  env_job:
+  ubuntu_hello:
     runs-on: ubuntu-latest
     steps:
-      - name: Print Env Variable from Repository Env
-        run: echo " var1 is having value ${{ vars.var1 }} "
-
+      - run: echo "GitHub Repository URL is ${{ github.repositoryUrl}} and branch is ${{ github.ref_name }} "
+      - name: Cloning GitHub Repo 
+        uses: actions/checkout@v3
+      - name: List files in workspace using github.workspace found in my context
+        run: ls ${{ github.workspace }}
