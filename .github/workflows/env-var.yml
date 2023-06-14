@@ -1,6 +1,6 @@
 name: Greeting on variable day
 on:
-  workflow_dispatch
+  push
 env:
   DAY_OF_WEEK: Monday
 
